@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:skycast/constants/constants.dart';
 
-TextStyle titleFont =
-    const TextStyle(fontWeight: FontWeight.w600, fontSize: 18.0);
-TextStyle infoFont =
-    const TextStyle(fontWeight: FontWeight.w400, fontSize: 18.0);
+
+  TextStyle titleFont = const TextStyle(fontWeight: FontWeight.w600, fontSize: 18.0);
+
 Widget additionalInformation(
-    String wind, String humidity, String pressure, String feelLike) {
+    String wind, String humidity, String pressure, String feels_like) {
   return Container(
     width: double.infinity,
-    padding: EdgeInsets.all(18.0),
+    padding: const EdgeInsets.all(18.0),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -23,15 +23,13 @@ Widget additionalInformation(
               children: [
                 Text(
                   "Wind",
-                  style: infoFont,
+                  style: titleFont
                 ),
-                SizedBox(
-                  height: 18.0,
-                ),
+                cHeight18,
                 Text(
-                  "Pressure",
-                  style: infoFont,
-                )
+                  "pressure",
+                  style: titleFont,
+                  )
               ],
             ),
             Column(
@@ -40,15 +38,13 @@ Widget additionalInformation(
               children: [
                 Text(
                   wind,
-                  style: titleFont,
+                  style: titleFont
                 ),
-                SizedBox(
-                  height: 18.0,
-                ),
+                cHeight18,
                 Text(
-                  pressure,
+                 pressure,
                   style: titleFont,
-                )
+                  ),
               ],
             ),
             Column(
@@ -56,35 +52,31 @@ Widget additionalInformation(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Wind",
-                  style: infoFont,
+                  "Humidity",
+                  style: titleFont
                 ),
-                SizedBox(
-                  height: 18.0,
-                ),
+                cHeight18,
                 Text(
-                  "Feels Like",
-                  style: infoFont,
-                )
+                  "Feels Lke",
+                  style: titleFont,
+                  )
               ],
             ),
-            Column(
+             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   humidity,
-                  style: titleFont,
+                  style: titleFont
                 ),
-                SizedBox(
-                  height: 18.0,
-                ),
+                cHeight18,
                 Text(
-                  feelLike,
+                  feels_like,
                   style: titleFont,
-                )
+                  )
               ],
-            ),
+            )
           ],
         )
       ],
