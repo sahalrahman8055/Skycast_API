@@ -1,7 +1,11 @@
 import 'dart:convert';
+import 'dart:developer';
+import 'dart:io';
 
 import 'package:http/http.dart' as http;
 import 'package:skycast/model/weather_model.dart';
+
+String errormessage = '';
 
 class WeatherApiClient {
   Future<Weather?> getCurrentWeather(String? location) async {
@@ -16,14 +20,11 @@ class WeatherApiClient {
         print(Weather.fromJson(body).cityName);
         return Weather.fromJson(body);
       } else {
-        print("Error: ${response.statusCode}");
-
-        return null;
+        throw response.statusCode.toString();
       }
     } catch (e) {
-      print("Error: $e");
-      
-      return null;
+      errormessage = e.toString();
+      log(e.toString());
     }
   }
 }

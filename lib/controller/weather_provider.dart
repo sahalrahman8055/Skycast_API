@@ -8,6 +8,12 @@ class WeatherProvider extends ChangeNotifier {
   Weather? data;
   WeatherApiClient client = WeatherApiClient();
 
+  // get error => null;
+
+  //  get  hasError => null;
+
+
+
 
 
   void changeValue(bool value) {

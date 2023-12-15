@@ -10,8 +10,7 @@ class Weather {
       {this.cityName,
       this.temp,
       this.wind,
-      this.humidity,
-      this.feels_like,
+      this.humidity, 
       this.pressure});
 
   //now let's build a function to parse the JSON file into the model

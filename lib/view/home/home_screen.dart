@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:skycast/constants/constants.dart';
 import 'package:skycast/controller/weather_provider.dart';
 import 'package:skycast/helper/colors.dart';
+import 'package:skycast/services/weather_api_client.dart';
 import 'package:skycast/view/home/widgets/additional_information.dart';
 import 'package:skycast/view/home/widgets/current_weather.dart';
 import 'package:skycast/view/widget/uppercase.dart';
@@ -47,7 +48,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.all(10),
                   child: TextFormField(
                     onFieldSubmitted: (String place) {
-                      value.getData(place,);
+                      value.getData(
+                        place,
+                      );
                     },
                     controller: weatherController,
                     cursorColor: cBlackColor,
@@ -109,6 +112,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       "${value.data!.humidity}",
                       "${value.data!.pressure}",
                       "${value.data!.feels_like}"),
+                Text(
+                  errormessage,
+                  style: TextStyle(fontSize: 20),
+                )
               ],
             );
           },
